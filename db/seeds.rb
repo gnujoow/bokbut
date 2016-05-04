@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#seeding for languages
+@data_hash = Hash.new
+path = Rails.root.to_s
+file = File.read(path+'/db/seed/lang.json')
+@data_hash = JSON.parse(file)
+
+@data_hash.each do |a|
+  Language.create(name: a["name"],value: a["value"])
+end
