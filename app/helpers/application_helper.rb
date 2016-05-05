@@ -1,7 +1,6 @@
 module ApplicationHelper
-  def syntax_highlight(text)
-    # Initialized in config/initializers/rouge_highlighter.rb
-    html = HighlightSource.render(text)
-    html.html_safe
+  def block_code(code, language)
+    formatter = Rouge::Formatters::HTML.new(css_class: 'highlight')
+    return Rouge.highlight(code, language, formatter).html_safe
   end
 end

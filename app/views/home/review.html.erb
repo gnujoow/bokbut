@@ -1,7 +1,3 @@
 <%= @source_type %>
 <%= @description %>
-<br />
-<%= @source %>
-<br />
-
-<%= syntax_highlight(@source) %>
+<%= block_code(@source, @source_type) %>
