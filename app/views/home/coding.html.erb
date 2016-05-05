@@ -2,6 +2,16 @@ source type: <%= @source_type %>
 
 <!-- 이부분도 마찬가지로 form helper로 고쳐짜야함 wj -->
 <form action="/review" method="POST">
+  <select name = "lang">
+    <% @languages.each do |l| %>
+      <% if l.value === @source_type %>
+        <option value="<%= l.value %>" selected><%= l.name %></option>
+      <% else %>
+        <option value="<%= l.value %>"><%= l.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
   <input name="description" type="text" class="form-control" placeholder="Description">
   <br>
   <textarea name="source" class="form-control" placeholder="Code here!" rows="20" id="comment"></textarea>

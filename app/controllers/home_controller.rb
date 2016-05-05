@@ -4,10 +4,12 @@ class HomeController < ApplicationController
   end
 
   def coding
-     @source_type = params[:lang]
+    @languages = Language.all
+    @source_type = params[:lang]
   end
 
   def review
+    @source_type = params[:lang]
     @description = params[:description]
     @source = params[:source]
   end
