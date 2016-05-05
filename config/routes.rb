@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
-  post '/coding' => 'home#coding'
+  post '/coding'  =>  'home#coding'
+  post '/review'       =>  'home#review'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
