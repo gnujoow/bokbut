@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Gem for this project
-gem 'devise'
+gem 'devise'        		# manage users
 gem 'rouge', '1.10.1'		# code highlight
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
