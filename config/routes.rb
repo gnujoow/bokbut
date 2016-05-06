@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/write'     =>  'home#write'
 
   get  '/r/:code_id'=>  'home#review'
+  get  '/raw/:code_id'=>'home#raw'
   get  '/browse'    =>  'home#browse'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
