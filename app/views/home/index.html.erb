@@ -1,19 +1,22 @@
-<h1>복붙</h1>
-<p>{이부분에 랜덤 격언}</p>
+<h1 align="center">복붙</h1>
+<p align="center">{이부분에 랜덤 격언}</p>
 <!-- 넘겨주는 부분 form helper사용하도록 수정해야함 WJ-->
 <form action="/paste" method="POST">
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-4">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-3">
       <select name = "lang" class="form-control">
         <% @languages.each do |l| %>
           <option value="<%= l.value %>"><%= l.name %></option>
         <% end %>
       </select>
-    </div>
+    </div><!-- ./col-md -->
 
-    <div class="col-md-2">
+    <div class="col-md-4">
       <button type="submit" class="btn btn-primary">확인</button>
-    </div>
-    <div class="col-md-3"></div>
+    </div><!-- ./col-md -->
+
+    <div class="col-md-5"></div>
   </div><!-- ./row -->
+</form>

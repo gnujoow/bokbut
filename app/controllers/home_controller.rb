@@ -22,10 +22,15 @@ class HomeController < ApplicationController
     @description = show_code.description
     @source = show_code.source
     @language = show_code.language
+    @code_id = params[:code_id]
+  end
+
+  def raw
+    show_code = Code.find(params[:code_id])
+    @source = show_code.source
   end
 
   def browse
     @every_code = Code.all.order("id desc")
   end
-
 end
