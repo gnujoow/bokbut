@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  post '/coding'  =>  'home#coding'
-  post '/review'       =>  'home#review'
+  post '/paste'     =>  'home#paste'
+  post '/write'     =>  'home#write'
+
+  get  '/r/:code_id'=>  'home#review'
+  get  '/browse'    =>  'home#browse'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
