@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'devise'
+# Gem for this project
+gem 'devise'        		# manage users
+gem 'rouge', '1.10.1'		# code highlight
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -31,10 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Gem for this project
-gem 'devise', '4.1.0'		# manage users
-gem 'rouge', '1.10.1'		# code highlight
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
