@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
   post '/coding'  =>  'home#coding'
   post '/review'       =>  'home#review'
