@@ -1,5 +1,9 @@
 <% @every_code.each do |p| %>
-  <%= p.id %><%= p.language %><br>
+  <code><%= p.language %>
+  <a href="/r/<%= p.id %>">
+    </code><%= p.description %>
+  </a>
+  <br>
   <%= p.created_at %>
   <hr />
 <% end %>
