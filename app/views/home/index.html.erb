@@ -1,22 +1,54 @@
-<h1 align="center">복붙</h1>
-<p align="center">{이부분에 랜덤 격언}</p>
-<!-- 넘겨주는 부분 form helper사용하도록 수정해야함 WJ-->
-<form action="/paste" method="POST">
-  <div class="row">
-    <div class="col-md-4"></div>
+<div class="jumbotron">
+  <h1 align="center">복붙</h1>
+  <p align="center"> <span id="quote"></span></p>
+  <!-- 넘겨주는 부분 form helper사용하도록 수정해야함 WJ-->
+  <form action="/paste" method="POST">
+    <div class="row">
+      <div class="col-md-4"></div>
 
-    <div class="col-md-3">
-      <select name = "lang" class="form-control">
-        <% @languages.each do |l| %>
-          <option value="<%= l.value %>"><%= l.name %></option>
-        <% end %>
-      </select>
-    </div><!-- ./col-md -->
+      <div class="col-md-3">
+        <select name = "lang" class="form-control">
+          <% @languages.each do |l| %>
+            <option value="<%= l.value %>"><%= l.name %></option>
+          <% end %>
+        </select>
+      </div><!-- ./col-md -->
 
-    <div class="col-md-4">
-      <button type="submit" class="btn btn-primary">확인</button>
-    </div><!-- ./col-md -->
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary">확인</button>
+      </div><!-- ./col-md -->
 
-    <div class="col-md-5"></div>
-  </div><!-- ./row -->
-</form>
+      <div class="col-md-5"></div>
+    </div><!-- ./row -->
+  </form>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">
+      <strong>만든사람</strong>
+      <a href="http://class.likelion.net/home/mypage/57">김민혁</a>
+      <a href="http://gnujoow.github.io"><strong>김우정</strong></a>
+      <a href="http://class.likelion.net/home/mypage/89">김재영</a>
+      <a href="http://class.likelion.net/home/mypage/73">윤지성</a>
+    </p>
+    <p>
+      <a href="http://konkuk.likelion.net/">@멋사x건국대학교</a>
+    </p>
+  </div>
+</footer>
+
+<!-- script for quote -->
+<script>
+  $(function(){
+      $("#quote").typed({
+        strings: [
+          "모방은 창조의 어머니 -아리스토텔리스",
+          "어떤 프로그램을 좋아한다면 당연히 그것을 좋아하는 사람들과 함께 나누는 것이 황금률이라고 생각한다 -리처드 스톨만",
+          "모방하지 않는 사람은 창조하지 못한다. -알랭",
+          "내가 만약 다른 이들보다 더 멀리 볼 수 있었다면, 그것은 바로 거인들의 어깨에 올라섰기 때문이다. -아이작 뉴턴",
+          "good artists copy great artists steal - Steve Jobs",
+          "사람은 다른 사람의 경험을 이용하는 특수 능력을 가진 동물이다. -코링우드"],
+        typeSpeed: 0
+      });
+  });
+</script>
