@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20160506101206) do
 
   create_table "codes", force: :cascade do |t|
-    t.integer  "post_id"
     t.string   "language"
     t.string   "description"
     t.text     "source"
