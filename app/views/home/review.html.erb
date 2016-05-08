@@ -1,5 +1,9 @@
-<div class="well"><%= @description %></div>
+<div class="well">
+  <%= @description %>
+</div>
+
 <%= block_code(@source, @language) %>
+
 <a href = "/raw/<%= @code_id %>" >
   <button class="btn btn-warning">raw</button>
 </a>

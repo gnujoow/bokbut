@@ -4,6 +4,6 @@
     </code><%= p.description %>
   </a>
   <br>
-  <%= p.created_at %>
+  <%= time_ago_in_words(p.created_at) %>
   <hr />
 <% end %>

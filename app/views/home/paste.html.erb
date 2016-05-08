@@ -1,26 +1,28 @@
-<form action="/write" method="POST">
-  <div class="row">
-    <div class="col-md-2">
-      <select name = "lang" class="form-control">
-        <% @languages.each do |l| %>
-          <% if l.value === @source_type %>
-            <option value="<%= l.value %>" selected><%= l.name %></option>
-          <% else %>
-            <option value="<%= l.value %>"><%= l.name %></option>
+<div class="jumbotron">
+  <form action="/write" method="POST">
+    <div class="row">
+      <div class="col-md-2">
+        <select name = "lang" class="form-control">
+          <% @languages.each do |l| %>
+            <% if l.value === @source_type %>
+              <option value="<%= l.value %>" selected><%= l.name %></option>
+            <% else %>
+              <option value="<%= l.value %>"><%= l.name %></option>
+            <% end %>
           <% end %>
-        <% end %>
-      </select>
-    </div><!-- ./col-md-2 -->
-    <div class="col-md-10">
-      <input name="description" type="text" class="form-control" placeholder="여기에 설명을 적어주세요" required>
-    </div><!-- ./col-md-10 -->
-  </div><!-- ./row -->
+        </select>
+      </div><!-- ./col-md-2 -->
+      <div class="col-md-10">
+        <input name="description" type="text" class="form-control" placeholder="여기에 설명을 적어주세요" required>
+      </div><!-- ./col-md-10 -->
+    </div><!-- ./row -->
 
-  <div class="row">
-    <div class="col-md-12">
-      <textarea name="source" class="form-control" placeholder="여기에 붙여넣기!" rows="20" id="comment"></textarea>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea name="source" class="form-control" placeholder="여기에 붙여넣기!" rows="20" id="comment"></textarea>
+      </div>
     </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary">복 붙!</button>
-</form>
+    <button type="submit" class="btn btn-primary">복 붙!</button>
+  </form>
+</div>
