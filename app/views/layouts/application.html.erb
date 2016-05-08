@@ -32,24 +32,34 @@
    </div><!-- /.container -->
  </nav>
 
-  <div class="container">
-    <%= yield %>
-  </div>
-
-  <footer class="footer">
     <div class="container">
-      <p class="text-muted">
-        <strong>만든사람</strong>
-        <a href="http://class.likelion.net/home/mypage/57">김민혁</a>
-        <a href="http://gnujoow.github.io"><strong>김우정</strong></a>
-        <a href="http://class.likelion.net/home/mypage/89">김재영</a>
-        <a href="http://class.likelion.net/home/mypage/73">윤지성</a>
-      </p>
-      <p>
-        <a href="http://konkuk.likelion.net/">@멋사x건국대학교</a>
-      </p>
+      <%= yield %>
     </div>
-  </footer>
 
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">
+          <strong>만든사람</strong>
+          <a href="http://class.likelion.net/home/mypage/57">김민혁</a>
+          <a href="http://gnujoow.github.io"><strong>김우정</strong></a>
+          <a href="http://class.likelion.net/home/mypage/89">김재영</a>
+          <a href="http://class.likelion.net/home/mypage/73">윤지성</a>
+        </p>
+        <p>
+          <a href="http://konkuk.likelion.net/">@멋사x건국대학교</a>
+        </p>
+      </div>
+    </footer>
+
+    <!--- google-analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-77451524-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>
