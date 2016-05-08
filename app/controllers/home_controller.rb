@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     new_code.language = params[:lang]
     new_code.description = params[:description]
     new_code.source = params[:source]
+    new_code.shared = params[:shared]
     new_code.save
     redirect_to "/r/"+new_code.id.to_s
   end
