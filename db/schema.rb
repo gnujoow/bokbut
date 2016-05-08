@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160506101206) do
     t.string   "language"
     t.string   "description"
     t.text     "source"
+    t.boolean  "shared"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

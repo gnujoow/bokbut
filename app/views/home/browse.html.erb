@@ -1,9 +1,11 @@
 <% @every_code.each do |p| %>
-  <code><%= p.language %>
-  <a href="/r/<%= p.id %>">
-    </code><%= p.description %>
-  </a>
-  <br>
-  <%= time_ago_in_words(p.created_at) %>
-  <hr />
+  <% if p.shared == true %>
+    <code><%= p.language %>
+    <a href="/r/<%= p.id %>">
+      </code><%= p.description %>
+    </a>
+    <br>
+    <%= time_ago_in_words(p.created_at) %>
+    <hr />
+  <% end %>
 <% end %>

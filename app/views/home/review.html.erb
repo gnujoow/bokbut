@@ -1,9 +1,12 @@
+<a href="/r/<%= @code_id %>">http://bokboot.me/r/<%= @code_id %></a>
+<%= time_ago_in_words(@date) %>
+
 <div class="well">
   <%= @description %>
 </div>
 
-<%= block_code(@source, @language) %>
-
 <a href = "/raw/<%= @code_id %>" >
   <button class="btn btn-warning">raw</button>
 </a>
+
+<%= block_code(@source, @language) %>
