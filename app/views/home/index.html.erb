@@ -1,11 +1,14 @@
 <div class="jumbotron">
   <h1 align="center">복붙</h1>
-  <p align="center"> <span id="quote"></span></p>
+  <br>
+  <div>
+    <p align="center"> <span id="quote"></span></p>
+  </div>
+  <br>
   <!-- 넘겨주는 부분 form helper사용하도록 수정해야함 WJ-->
   <form action="/paste" method="POST">
     <div class="row">
       <div class="col-md-4"></div>
-
       <div class="col-md-3">
         <select name = "lang" class="form-control">
           <% @languages.each do |l| %>
@@ -28,8 +31,8 @@
   $(function(){
       $("#quote").typed({
         strings: [
-          "모방은 창조의 어머니 -아리스토텔리스",
-          "어떤 프로그램을 좋아한다면 당연히 그것을 좋아하는 사람들과 함께 나누는 것이 황금률이라고 생각한다 -리처드 스톨만",
+          "모방은 창조의 어머니 -아리스토텔레스",
+          "어떤 프로그램을 좋아한다면 당연히 그것을 좋아하는 사람들과 함께 나누는 것이 황금률이라고 생각한다. -리처드 스톨만",
           "모방하지 않는 사람은 창조하지 못한다. -알랭",
           "내가 만약 다른 이들보다 더 멀리 볼 수 있었다면, 그것은 바로 거인들의 어깨에 올라섰기 때문이다. -아이작 뉴턴",
           "good artists copy great artists steal - Steve Jobs",

@@ -22,6 +22,7 @@ class HomeController < ApplicationController
     @description = show_code.description
     @source = show_code.source
     @language = show_code.language
+    @date = show_code.created_at
     @code_id = params[:code_id]
   end
 
