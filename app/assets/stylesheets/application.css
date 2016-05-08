@@ -21,7 +21,10 @@ html *
    font-family: 'Source Code Pro', 'Nanum Gothic', serif !important;
 }
 
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+  margin-bottom: 60px;
+}
 
 .footer {
   position: absolute;
