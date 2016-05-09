@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Gem for this project
+gem 'omniauth-facebook' # facebook login
 gem 'devise'        		# manage users
 gem 'rouge', '1.10.1'		# code highlight
 
