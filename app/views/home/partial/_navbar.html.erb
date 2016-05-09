@@ -19,7 +19,7 @@
         <li class="active"><a href="/mypage/"><%=current_user.name%></a></li>
         <li class="active"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
       <% else %>
-        <li class="active"><a href="#"  data-toggle="modal" data-target="#myModal">로그인</a></li>
+        <li class="active"><a href="#"  data-toggle="modal" data-target="#loginModal">로그인</a></li>
       <% end %>
      </ul>
     </div><!--/.nav-collapse -->
@@ -28,7 +28,7 @@
 
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="loginModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -38,7 +38,7 @@
       </div>
       <div class="modal-body">
         <p><%= link_to "페이스북으로 로그인", user_omniauth_authorize_path(:facebook) %></p>
-        <p></p>
+        <p>깃헙으로 로그인</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
