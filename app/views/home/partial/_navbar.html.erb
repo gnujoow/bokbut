@@ -1,28 +1,48 @@
 <nav class="navbar navbar-default navbar-fixed-top">
- <div class="container">
-   <div class="navbar-header">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
-     <a class="navbar-brand" href="/">복붙</a>
-   </div>
-   <div id="navbar" class="navbar-collapse collapse">
-     <ul class="nav navbar-nav">
-       <li><a href="/browse">browse</a></li>
-       </li>
-     </ul>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">복붙</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/browse">browse</a></li>
+        </li>
+      </ul>
      <ul class="nav navbar-nav navbar-right">
-       <% if user_signed_in? %>
-                <li class="active"><a href="/mypage/"><%=current_user.name%></a></li>
-                <li class="active"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
-              <% else %>
-                <li class="active"><%= link_to "로그인", user_omniauth_authorize_path(:facebook) %></li>
-              <% end %>
-       <!--<li class="active"><a href="#" onClick="alert('개발중입니다. 조만간 만나요 빠잉!')">로그인 </a></li>-->
+      <% if user_signed_in? %>
+        <li class="active"><a href="/mypage/"><%=current_user.name%></a></li>
+        <li class="active"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
+      <% else %>
+        <li class="active"><a href="#"  data-toggle="modal" data-target="#loginModal">로그인</a></li>
+      <% end %>
      </ul>
-   </div><!--/.nav-collapse -->
- </div><!-- /.container -->
-</nav>
+    </div><!--/.nav-collapse -->
+  </div><!-- /.container -->
+</nav><!-- /. nav -->
+
+
+<!-- Modal -->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">로그인</h4>
+      </div>
+      <div class="modal-body">
+        <p><%= link_to "페이스북으로 로그인", user_omniauth_authorize_path(:facebook) %></p>
+        <p>깃헙으로 로그인</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
