@@ -10,6 +10,7 @@ class HomeController < ApplicationController
 
   def write
     new_code = Code.new
+    new_code.user_id=params[:id]
     new_code.language = params[:lang]
     new_code.description = params[:description]
     new_code.source = params[:source]
@@ -34,5 +35,17 @@ class HomeController < ApplicationController
 
   def browse
     @every_code = Code.all.order("id desc")
+  end
+  
+  def mypage
+    @my_code = User.find(current_user.id)  
+    @languages = Language.all
+  end
+  
+  def lg_change
+    my = User.find(current_user.id)  
+    my.language=params[:lang]
+    my.save
+    redirect_to "/mypage"
   end
 end

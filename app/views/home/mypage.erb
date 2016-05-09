@@ -1,0 +1,44 @@
+
+<div class="row">
+    <div class="col-md-2" style="text-align:center;vertical-align:middle">
+    <%= image_tag(current_user.image, size: '70x70', style:'border-radius:3px;margin:auto;') if current_user.image %></div>
+    <div class="col-md-3">
+    <h2><%=current_user.name%></h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 col-md-offset-2" >주 언어 : </div>
+    <form action="/lg_change" method="POST">
+        <div class="col-md-3">
+        <select name = "lang" class="form-control" >
+            <% @languages.each do |l| %>
+                <%if l.value==current_user.language %>
+                    <option value="<%=current_user.language%>" selected><%=current_user.language%></option>
+                <%else%>
+                    <option value="<%= l.value %>"><%= l.name %></option>
+                <%end%>
+            <%end%>
+        </select></div>
+        <div class="col-md-2">
+        <input type="submit" class="btn btn-primary" style="margin-left:0"value="변경"/>
+        </div>
+    </form>
+    
+</div>
+
+<table style="margin-top:40px;" class="table table-hover">
+     <tr>
+         <th>#</th>
+         <th>언어</th>
+         <th>설명</th>
+     </tr>
+<%@my_code.codes.each do |c|%>
+    
+    <tr>
+        <td><%=c.id%></td>
+        <td><%=c.language%></td>
+        <td><a href="/r/<%=c.id%>"><%=c.description%></a></td>
+    </tr>
+    <%end%>
+     
+ </table>

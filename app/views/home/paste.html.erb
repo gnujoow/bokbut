@@ -29,6 +29,13 @@
       </label>
     </div>
 
+    <% if user_signed_in? %>
+      <input type="hidden" name="id" value="<%=current_user.id%>"/>
+      <% else %>
+      <input type="hidden" name="id" value="none"/>
+      <% end %>
+    
     <button type="submit" class="btn btn-primary">복 붙!</button>
+    
   </form>
 </div>
