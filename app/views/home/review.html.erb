@@ -1,12 +1,27 @@
-<a href="/r/<%= @code_id %>">http://bokboot.me/r/<%= @code_id %></a>
-<%= time_ago_in_words(@date) %>
+<p align="right"><%= time_ago_in_words(@date) %></p>
 
-<div class="well">
+
+<div class="input-group">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" data-clipboard-target="#url">
+      <span class="glyphicon glyphicon-link" aria-hidden="true">주소복사</span>
+    </button>
+  </span>
+  <input type="text" class="form-control" id="url" value="http://bokboot.md/r/<%= @code_id %>">
+</div><!-- /input-group -->
+
+<div class="well well-sm">
   <%= @description %>
 </div>
 
 <a href = "/raw/<%= @code_id %>" >
-  <button class="btn btn-warning">raw</button>
+  <button class="btn btn-default">
+    <span class="glyphicon glyphicon-console" aria-hidden="true">코드원본</span>
+  </button>
 </a>
 
 <%= block_code(@source, @language) %>
+
+<script>
+  new Clipboard('.btn');
+</script>
