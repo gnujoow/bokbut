@@ -27,7 +27,7 @@
        </ul>
        <ul class="nav navbar-nav navbar-right">
          <% if user_signed_in? %>
-                  <li class="active"><a href="#" onClick="alert('개발중입니다. 조만간 만나요 빠잉!')"><%=current_user.name%></a></li>
+                  <li class="active"><a href="/mypage/"><%=current_user.name%></a></li>
                   <li class="active"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
                 <% else %>
                   <li class="active"><%= link_to "로그인", user_omniauth_authorize_path(:facebook) %></li>
