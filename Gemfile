@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'omniauth-facebook' # facebook login
 gem 'devise'        		# manage users
 gem 'rouge', '1.10.1'		# code highlight
+gem 'bootstrap-social-rails' #social buttons
+gem 'font-awesome-rails'     #social icions
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
