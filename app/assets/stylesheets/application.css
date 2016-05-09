@@ -12,13 +12,14 @@
  *
  *= require_tree .
  *= require_self
- */
+
+ //소셜버튼
+ *= require bootstrap-social
+ *= require font-awesome
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:500);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-html *
-{
-   font-family: 'Source Code Pro', 'Nanum Gothic', serif !important;
-}
 
 body {
   padding-top: 70px;
