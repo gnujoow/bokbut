@@ -19,8 +19,11 @@
 
     <div class="row">
       <div class="col-md-12">
-        <textarea name="source" class="form-control" placeholder="여기에 붙여넣기!" rows="17" id="comment" required></textarea>
+        <textarea name="source" class="form-control" placeholder="여기에 붙여넣기!" rows="17" id="code"></textarea>
       </div>
+    </div>
+
+    <div id="text">
     </div>
 
     <div class="checkbox">
@@ -31,11 +34,18 @@
 
     <% if user_signed_in? %>
       <input type="hidden" name="id" value="<%=current_user.id%>"/>
-      <% else %>
+    <% else %>
       <input type="hidden" name="id" value="none"/>
-      <% end %>
-    
+    <% end %>
+
     <button type="submit" class="btn btn-primary">복 붙!</button>
-    
+
   </form>
 </div>
+
+<script>
+  var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+  });
+</script>
