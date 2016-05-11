@@ -1,13 +1,12 @@
 <button class="btn btn-default" data-clipboard-target="#code">
   <span class="glyphicon glyphicon-console" aria-hidden="true">코드복사</span>
 </button>
+
 <div class="row">
   <div class="col-md-12">
     <textarea name="source" class="form-control" id="code" placeholder="여기에 붙여넣기!" rows="20" id="comment"><%= @source %></textarea>
   </div>
 </div>
 
-
 <script>
-  new Clipboard('.btn');
 </script>
