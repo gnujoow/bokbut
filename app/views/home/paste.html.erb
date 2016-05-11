@@ -22,7 +22,7 @@
         <textarea name="source" class="form-control" placeholder="여기에 붙여넣기!" rows="17" id="code"></textarea>
       </div>
     </div>
-    
+
     <div class="checkbox">
       <label>
         <input type="checkbox" name="shared" checked>이 코드를 다른 사람들에게 공유합니다. (체크를 해제하면 주소로만 접근할 수 있습니다.)
@@ -32,17 +32,17 @@
     <% if user_signed_in? %>
       <input type="hidden" name="id" value="<%=current_user.id%>"/>
     <% else %>
-      <input type="hidden" name="id" value="none"/>
+      <input type="hidden" name="id" value="anonymous"/>
     <% end %>
-
     <button type="submit" class="btn btn-primary">복 붙!</button>
-
   </form>
 </div>
 
 <script>
-  var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+$(document).ready(function () {
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
-    matchBrackets: true,
+    matchBrackets: true
   });
+});
 </script>
