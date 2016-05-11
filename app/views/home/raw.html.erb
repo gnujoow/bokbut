@@ -3,11 +3,13 @@
 </button>
 <div class="row">
   <div class="col-md-12">
-    <textarea name="source" class="form-control" id="code" placeholder="여기에 붙여넣기!" rows="20" id="comment"><%= @source %></textarea>
+    <textarea name="source" class="form-control" id="code" placeholder="여기에 붙여넣기!" rows="20" ><%= @source %></textarea>
   </div>
 </div>
 
-
 <script>
-  new Clipboard('.btn');
+  var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+  });
 </script>
