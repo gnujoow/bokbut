@@ -1,13 +1,15 @@
 <p align="right"><%= time_ago_in_words(@date) %></p>
 
-
 <div class="input-group">
   <span class="input-group-btn">
-    <button class="btn btn-default" type="button" data-clipboard-target="#url">
+    <button class="btn btn-default" type="button" id="copy-url"
+        data-toggle="tooltip" data-placement="top"
+        title="복사하기">
       <span class="glyphicon glyphicon-link" aria-hidden="true">주소복사</span>
     </button>
   </span>
-  <input type="text" class="form-control" id="url" value="http://bokboot.me/r/<%= @code_id %>">
+  <input type="text" class="form-control"
+      value="http://bokboot.me/r/<%= @code_id %>" placeholder="Some path" id="url">
 </div><!-- /input-group -->
 
 <div class="well well-sm">
@@ -23,5 +25,30 @@
 <%= block_code(@source, @language) %>
 
 <script>
-  new Clipboard('.btn');
+$(document).ready(function() {
+  $('#copy-url').tooltip();
+
+  $('#copy-url').bind('click', function() {
+    var input = document.querySelector('#url');
+    input.setSelectionRange(0, input.value.length + 1);
+    try {
+      var success = document.execCommand('copy');
+      if (success) {
+        $('#copy-url').trigger('copied', ['복사성공 :)']);
+      } else {
+        $('#copy-url').trigger('copied', ['Ctrl-c !']);
+      }
+    } catch (err) {
+      $('#copy-url').trigger('copied', ['Ctrl-c !']);
+    }
+  });
+
+  $('#copy-url').bind('copied', function(event, message) {
+    $(this).attr('title', message)
+        .tooltip('fixTitle')
+        .tooltip('show')
+        .attr('title', "복사하기")
+        .tooltip('fixTitle');
+  });
+});
 </script>
