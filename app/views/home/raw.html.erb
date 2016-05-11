@@ -1,4 +1,5 @@
-<button class="btn btn-default" data-clipboard-target="#code">
+<button class="btn btn-default" type="button" id="copy-code"
+    data-toggle="tooltip" data-placement="top" title="복사하기">
   <span class="glyphicon glyphicon-console" aria-hidden="true">코드복사</span>
 </button>
 <div class="row">
@@ -8,8 +9,32 @@
 </div>
 
 <script>
-  var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
-    lineNumbers: true,
-    matchBrackets: true,
+$(document).ready(function() {
+  //tooltip
+  $('#copy-code').tooltip();
+  $('#copy-code').bind('click', function(){
+    var input = document.querySelector('#code');
+    input.setSelectionRange(0, input.value.length + 1);
+
+    try {
+      var success = document.execCommand('copy');
+      if (success) {
+        $('#copy-code').trigger('copied', ['복사성공 :)']);
+      } else {
+        $('#copy-code').trigger('copied', ['Ctrl-c !']);
+      }
+    } catch (err) {
+      $('#copy-code').trigger('copied', ['Ctrl-c !']);
+    }
+
   });
+  $('#copy-code').bind('copied', function(event, message) {
+    $(this).attr('title', message)
+        .tooltip('fixTitle')
+        .tooltip('show')
+        .attr('title', "복사하기")
+        .tooltip('fixTitle');
+  });
+
+});
 </script>
