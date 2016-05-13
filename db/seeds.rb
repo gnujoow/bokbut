@@ -14,4 +14,26 @@ file = File.read(path+'/db/seed/lang.json')
 
 @data_hash.each do |a|
   Language.create(name: a["name"],value: a["value"])
+  
 end
+
+# browse 테스트코드1
+# (1..10).each do |i|
+#     new_code = Code.new
+#     new_code.user_id=i
+#     new_code.language = "C++"
+#     new_code.description = "a" + i.to_s
+#     new_code.source = "source" + i.to_s
+#     new_code.shared = true
+#     new_code.save
+# end
+
+# browse 테스트코드2
+# 300.times do |i|
+#   Code.create(user_id: "#{i}",
+#               language: "C++",
+#               description: "#{i}",
+#               source: "source",
+#               shared: true
+#               )
+# end
