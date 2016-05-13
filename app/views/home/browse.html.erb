@@ -1,20 +1,15 @@
-<div class="container">
-  <!--아래 게시판 내용 나온는 부분.-->
-  <div class="row">
-    <% @every_code.each do |p| %>
-      <% if p.shared == true %>
-        <code><%= p.language %>
-        <a href="/r/<%= p.id %>">
-          </code><%= p.description %>
-        </a>
-        <br>
-        <%= time_ago_in_words(p.created_at) %>
-        <hr />
-      <% end %>
+<!--아래 게시판 내용 나온는 부분.-->
+<div class="row">
+  <% @every_code.each do |p| %>
+    <% if p.shared == true %>
+      <code><%= p.language %>
+      <a href="/r/<%= p.id %>">
+        </code><%= p.description %>
+      </a>
+      <br>
+      <%= time_ago_in_words(p.created_at) %>
+      <hr />
     <% end %>
-  </div>
-  <!--게시판 내용을 바꾸는 pagination 부분. 선택하면 게시판 내용 삭제되고, 다른 내용 출력되도록 ajax 구현.-->
-  <!--혹은 페이지가 다르게 되도록 라우터로 수정.-->
-    
-  <%= will_paginate @every_code %>
+  <% end %>
 </div>
+<%= will_paginate @every_code %>

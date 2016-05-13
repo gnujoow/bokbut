@@ -17,6 +17,7 @@ file = File.read(path+'/db/seed/lang.json')
   
 end
 
+# browse 테스트코드1
 # (1..10).each do |i|
 #     new_code = Code.new
 #     new_code.user_id=i
@@ -26,11 +27,13 @@ end
 #     new_code.shared = true
 #     new_code.save
 # end
-300.times do |i|
-  Code.create(user_id: "#{i}",
-              language: "C++",
-              description: "#{i}",
-              source: "source",
-              shared: true
-              )
-end
+
+# browse 테스트코드2
+# 300.times do |i|
+#   Code.create(user_id: "#{i}",
+#               language: "C++",
+#               description: "#{i}",
+#               source: "source",
+#               shared: true
+#               )
+# end
