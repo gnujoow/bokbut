@@ -34,7 +34,7 @@ class HomeController < ApplicationController
   end
 
   def browse
-    @every_code = Code.all.order("id desc")
+    @every_code = Code.paginate(:page => params[:page])
   end
   
   def mypage
