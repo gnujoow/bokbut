@@ -12,4 +12,9 @@
     <% end %>
   <% end %>
 </div>
-<%= will_paginate @every_code, renderer: BootstrapPagination::Rails %>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= will_paginate @every_code, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
