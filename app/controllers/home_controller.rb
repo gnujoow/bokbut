@@ -9,12 +9,15 @@ class HomeController < ApplicationController
   end
 
   def write
+
     new_code = Code.new
-    new_code.user_id=params[:id]
     new_code.language = params[:lang]
     new_code.description = params[:description]
     new_code.source = params[:source]
     new_code.shared = params[:shared]
+    if user_signed_in?
+      new_code.user_id = current_user.id
+    end
     new_code.save
     redirect_to "/r/"+new_code.id.to_s
   end

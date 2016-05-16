@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160509035915) do
     t.string   "description"
     t.text     "source"
     t.boolean  "shared"
-    t.string   "user_id"
+    t.integer  "user_id",     default: -1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
