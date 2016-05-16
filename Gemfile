@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Gem for this project
 gem 'will_paginate', '~> 3.1.0' # browse pagenate
+gem 'will_paginate-bootstrap'   # pretify pagenate
 gem 'omniauth-facebook' # facebook login
 gem 'devise'        		# manage users
 gem 'rouge', '1.10.1'		# code highlight
