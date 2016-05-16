@@ -28,5 +28,20 @@ video#bgvid {
 .jumbotron {
   background: rgb(255, 255, 255); /* This is for ie8 and below */
   background: rgba(255, 255, 255, 0.8);
-  
+
+}
+
+.footer {
+    color: white;
+    background: rgba(68, 68, 68, 0.8);
+    width: 100%;
+    position:absolute;
+    bottom:0; right:0
+}
+
+.footer a{
+  color :white;
+}
+.footer a:link {
+  text-decoration: none;
 }
