@@ -15,17 +15,17 @@
       <div class="col-md-4"></div>
       <div class="col-md-3">
         <select name = "lang" class="form-control" >
-            <% @languages.each do |l| %>
-              <% if user_signed_in? %>
-                <%if l.value==current_user.language and  %>
-                  <option value="<%=current_user.language%>" selected><%=l.name%></option>
-                <% else %>
-                  <option value="<%= l.value %>"><%= l.name %></option>
-                <% end %>
+          <% @languages.each do |l| %>
+            <% if user_signed_in? %>
+              <%if l.value==current_user.language and  %>
+                <option value="<%=current_user.language%>" selected><%=l.name%></option>
               <% else %>
                 <option value="<%= l.value %>"><%= l.name %></option>
               <% end %>
-            <%end%>
+            <% else %>
+              <option value="<%= l.value %>"><%= l.name %></option>
+            <% end %>
+          <%end%>
         </select>
       </div><!-- ./col-md -->
 
