@@ -36,14 +36,14 @@ class HomeController < ApplicationController
   def browse
     @every_code = Code.paginate(:page => params[:page])
   end
-  
+
   def mypage
-    @my_code = User.find(current_user.id)  
+    @my_code = User.find(current_user.id)
     @languages = Language.all
   end
-  
+
   def lg_change
-    my = User.find(current_user.id)  
+    my = User.find(current_user.id)
     my.language=params[:lang]
     my.save
     redirect_to "/mypage"
