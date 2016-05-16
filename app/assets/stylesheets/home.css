@@ -6,3 +6,26 @@ pre {
 textarea {
   tab-size: 4;
 }
+
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.jumbotron {
+  background: rgb(255, 255, 255); /* This is for ie8 and below */
+  background: rgba(255, 255, 255, 0.5); 
+}

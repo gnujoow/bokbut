@@ -1,11 +1,20 @@
-<% @every_code.each do |p| %>
-  <% if p.shared == true %>
-    <code><%= p.language %>
-    <a href="/r/<%= p.id %>">
-      </code><%= p.description %>
-    </a>
-    <br>
-    <%= time_ago_in_words(p.created_at) %>
-    <hr />
+<!--아래 게시판 내용 나온는 부분.-->
+<div class="row">
+  <% @every_code.each do |p| %>
+    <% if p.shared == true %>
+      <code><%= p.language %>
+      <a href="/r/<%= p.id %>">
+        </code><%= p.description %>
+      </a>
+      <br>
+      <%= time_ago_in_words(p.created_at) %>
+      <hr />
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= will_paginate @every_code, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
