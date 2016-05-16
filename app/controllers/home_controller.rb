@@ -10,11 +10,13 @@ class HomeController < ApplicationController
 
   def write
     new_code = Code.new
-    new_code.user_id=params[:id]
     new_code.language = params[:lang]
     new_code.description = params[:description]
     new_code.source = params[:source]
     new_code.shared = params[:shared]
+    if user_signed_in?
+      new_code.user_id = current_user.id
+    end
     new_code.save
     redirect_to "/r/"+new_code.id.to_s
   end
@@ -34,10 +36,24 @@ class HomeController < ApplicationController
   end
 
   def browse
-    @every_code = Code.paginate(:page => params[:page]).order('id DESC')
+    @every_code = Code.order('id DESC').paginate(:page => params[:page])
+  end
+
+  def delete
+    unless user_signed_in?
+      redirect_to "/"
+    end
+    code = Code.find(params[:code_id])
+    if current_user.id === code.user_id
+      code.destroy
+    end
+    redirect_to "/mypage"
   end
 
   def mypage
+    unless user_signed_in?
+      redirect_to "/"
+    end
     @my_code = User.find(current_user.id)
     @languages = Language.all
   end

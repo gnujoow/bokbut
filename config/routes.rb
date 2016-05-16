@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   post '/paste'     =>  'home#paste'
   post '/write'     =>  'home#write'
   post '/lg_change' =>  'home#lg_change'
+
   get '/mypage'     => 'home#mypage'
   get  '/r/:code_id'=>  'home#review'
   get  '/raw/:code_id'=>'home#raw'
+  get  '/delete/:code_id'=>'home#delete'
   get  '/browse'    =>  'home#browse'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

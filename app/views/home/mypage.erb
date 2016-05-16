@@ -29,16 +29,24 @@
 </div><!-- /.row-->
 
 <table style="margin-top:40px;" class="table table-hover">
-  <tr>
-    <th>#</th>
-    <th>언어</th>
-    <th>설명</th>
+  <tr class="row">
+    <th class="col-md-1">#</th>
+    <th class="col-md-1">언어</th>
+    <th class="col-md-8">설명</th>
+    <th class="col-md-2">삭제</th>
   </tr>
 <%@my_code.codes.each do |c|%>
-  <tr>
+  <tr class="row">
     <td><%=c.id%></td>
     <td><%=c.language%></td>
     <td><a href="/r/<%=c.id%>"><%=c.description%></a></td>
+    <td>
+      <a href="/delete/<%= c.id %>">
+      <button class="btn btn-danger btn-sm">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </a>
+    </td>
   </tr>
   <%end%>
  </table>
