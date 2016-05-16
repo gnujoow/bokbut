@@ -39,7 +39,21 @@ class HomeController < ApplicationController
     @every_code = Code.order('id DESC').paginate(:page => params[:page])
   end
 
+  def delete
+    unless user_signed_in?
+      redirect_to "/"
+    end
+    code = Code.find(params[:code_id])
+    if current_user.id === code.user_id
+      code.destroy
+    end
+    redirect_to "/mypage"
+  end
+
   def mypage
+    unless user_signed_in?
+      redirect_to "/"
+    end
     @my_code = User.find(current_user.id)
     @languages = Language.all
   end
