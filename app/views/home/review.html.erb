@@ -22,12 +22,13 @@
   </button>
 </a>
 
+<% if @browser_type == 'mobile' %>
 <a id = "kakaoshare">
   <button class="btn btn-default">
     <span class="glyphicon glyphicons-share-alt" aria-hidden="true">카카오톡으로공유</span>
   </button>
 </a>
-
+<% end %>
 <%= block_code(@source, @language) %>
 
 <script>
