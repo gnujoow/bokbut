@@ -62,9 +62,9 @@ $(document).ready(function() {
   $('#kakaoshare').click(function(){
     Kakao.Link.createTalkLinkButton({
       container: '#kakaoshare',
-      label: '\"<%= @description %>\" 복붙!"',
+      label: '복붙 : <%= @description %>',
       image: {
-        src: '/assets/bokboot.png',
+        src: '/assets/images/bokboot.png',
         width: '300',
         height: '200'
       },
