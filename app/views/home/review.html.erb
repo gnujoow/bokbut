@@ -22,10 +22,18 @@
   </button>
 </a>
 
+<a id = "kakaoshare">
+  <button class="btn btn-default">
+    <span class="glyphicon glyphicons-share-alt" aria-hidden="true">카카오톡으로공유</span>
+  </button>
+</a>
+
 <%= block_code(@source, @language) %>
 
 <script>
 $(document).ready(function() {
+  // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+  Kakao.init('550099100eb10474b82ecb43d81e185a');
   $('#copy-url').tooltip();
 
   $('#copy-url').bind('click', function() {
@@ -50,5 +58,23 @@ $(document).ready(function() {
         .attr('title', "복사하기")
         .tooltip('fixTitle');
   });
+  
+  $('#kakaoshare').click(function(){
+    // // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createTalkLinkButton({
+      container: '#kakaoshare',
+      label: '카카오링크 샘플에 오신 것을 환영합니다.',
+      image: {
+        src: 'http://dn.api1.kage.kakao.co.kr/14/dn/btqaWmFftyx/tBbQPH764Maw2R6IBhXd6K/o.jpg',
+        width: '300',
+        height: '200'
+      },
+      webButton: {
+        text: '복붙',
+        url: 'http://bokboot.me/r/<%= @code_id %>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      }
+    });
+  });
+
 });
 </script>
