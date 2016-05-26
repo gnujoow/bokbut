@@ -43,10 +43,8 @@
 <% end %>
 <%= block_code(@source, @language) %>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function() {
-  // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-  Kakao.init('550099100eb10474b82ecb43d81e185a');
   $('#copy-url').tooltip();
 
   $('#copy-url').bind('click', function() {
@@ -72,6 +70,7 @@ $(document).ready(function() {
         .tooltip('fixTitle');
   });
 
+  Kakao.init('550099100eb10474b82ecb43d81e185a');
   $('#kakaoshare').click(function(){
     Kakao.Link.createTalkLinkButton({
       container: '#kakaoshare',
