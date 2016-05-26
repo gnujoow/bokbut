@@ -16,17 +16,7 @@
   <%= @description %>
 </div>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- bokboot -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1377383149600056"
-     data-ad-slot="8131493323"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+<%= render :partial => "home/partial/ads" %>
 
 <a href = "/raw/<%= @code_id %>" >
   <button class="btn btn-default">
@@ -40,7 +30,27 @@
     <span class="glyphicon glyphicons-share-alt" aria-hidden="true">카카오톡으로공유</span>
   </button>
 </a>
+
+<script type="text/javascript">
+Kakao.init('550099100eb10474b82ecb43d81e185a');
+$('#kakaoshare').click(function(){
+  Kakao.Link.createTalkLinkButton({
+    container: '#kakaoshare',
+    label: '복붙 : <%= @description %>',
+    image: {
+      src: '/assets/bokboot.png',
+      width: '300',
+      height: '200'
+    },
+    webButton: {
+      text: '복붙',
+      url: 'http://bokboot.me/r/<%= @code_id %>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+    }
+  });
+});
+</script>
 <% end %>
+
 <%= block_code(@source, @language) %>
 
 <script type="text/javascript">
@@ -70,22 +80,4 @@ $(document).ready(function() {
         .tooltip('fixTitle');
   });
 });
-
-Kakao.init('550099100eb10474b82ecb43d81e185a');
-$('#kakaoshare').click(function(){
-  Kakao.Link.createTalkLinkButton({
-    container: '#kakaoshare',
-    label: '복붙 : <%= @description %>',
-    image: {
-      src: '/assets/bokboot.png',
-      width: '300',
-      height: '200'
-    },
-    webButton: {
-      text: '복붙',
-      url: 'http://bokboot.me/r/<%= @code_id %>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-    }
-  });
-});
-
 </script>
