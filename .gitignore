@@ -17,4 +17,4 @@
 /tmp
 
 # Igonore production assets precompile
-/public/assets/*
+# /public/assets/*
