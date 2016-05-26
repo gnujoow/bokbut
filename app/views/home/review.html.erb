@@ -43,10 +43,8 @@
 <% end %>
 <%= block_code(@source, @language) %>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function() {
-  // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-  Kakao.init('550099100eb10474b82ecb43d81e185a');
   $('#copy-url').tooltip();
 
   $('#copy-url').bind('click', function() {
@@ -71,22 +69,23 @@ $(document).ready(function() {
         .attr('title', "복사하기")
         .tooltip('fixTitle');
   });
-
-  $('#kakaoshare').click(function(){
-    Kakao.Link.createTalkLinkButton({
-      container: '#kakaoshare',
-      label: '복붙 : <%= @description %>',
-      image: {
-        src: '/assets/bokboot.png',
-        width: '300',
-        height: '200'
-      },
-      webButton: {
-        text: '복붙',
-        url: 'http://bokboot.me/r/<%= @code_id %>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-      }
-    });
-  });
-
 });
+
+Kakao.init('550099100eb10474b82ecb43d81e185a');
+$('#kakaoshare').click(function(){
+  Kakao.Link.createTalkLinkButton({
+    container: '#kakaoshare',
+    label: '복붙 : <%= @description %>',
+    image: {
+      src: '/assets/bokboot.png',
+      width: '300',
+      height: '200'
+    },
+    webButton: {
+      text: '복붙',
+      url: 'http://bokboot.me/r/<%= @code_id %>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+    }
+  });
+});
+
 </script>
