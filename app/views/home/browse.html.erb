@@ -3,10 +3,8 @@
   <% @every_code.each do |p| %>
     <% if p.shared == true %>
       <div class ="row">
-        <div class="col-md-1 col-xs-2">
+        <div class="col-md-10 col-xs-8">
           <code><%= p.language %></code>
-        </div>
-        <div class="col-md-9 col-xs-6">
           <a href="/r/<%= p.id %>">
             <%= p.description %>
           </a>
