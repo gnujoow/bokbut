@@ -2,12 +2,29 @@
 <div class="row">
   <% @every_code.each do |p| %>
     <% if p.shared == true %>
-      <code><%= p.language %>
-      <a href="/r/<%= p.id %>">
-        </code><%= p.description %>
-      </a>
-      <br>
-      <%= time_ago_in_words(p.created_at) %>
+      <div class ="row">
+        <div class="col-md-1 col-xs-2">
+          <code><%= p.language %></code>
+        </div>
+        <div class="col-md-9 col-xs-6">
+          <a href="/r/<%= p.id %>">
+            <%= p.description %>
+          </a>
+        </div>
+        <div class="col-md-2 col-xs-4" style="text-align: right;">
+          <%= time_ago_in_words(p.created_at) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <% p.source.split(/\n/, -1)[0..2].each do |line| %>
+             <%= line %><br>
+            <% end %>
+            ...
+          </div>
+        </div>
+      </div>
       <hr />
     <% end %>
   <% end %>
