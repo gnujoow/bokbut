@@ -36,7 +36,7 @@ class HomeController < ApplicationController
   end
 
   def browse
-    @every_code = Code.order('id DESC').paginate(:page => params[:page])
+    @every_code = Code.where('shared = ?',true).order('id DESC').paginate(:page => params[:page])
   end
 
   def delete
