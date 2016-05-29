@@ -1,7 +1,6 @@
 <!--아래 게시판 내용 나온는 부분.-->
 <div class="row">
   <% @every_code.each do |p| %>
-    <% if p.shared == true %>
       <div class ="row">
         <div class="col-md-10 col-xs-8">
           <code><%= p.language %></code>
@@ -24,7 +23,6 @@
         </div>
       </div>
       <hr />
-    <% end %>
   <% end %>
 </div>
 
