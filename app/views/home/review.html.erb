@@ -24,10 +24,15 @@
   </button>
 </a>
 
+<% #이부분이 페이스북으로 공유되는 버튼 %>
+<button class="btn btn-social btn-facebook">
+   <span class="fa fa-facebook"></span>공유하기
+</button>
+
 <% if @browser_type == 'mobile' %>
 <a id = "kakaoshare">
-  <button class="btn btn-default">
-    <span class="glyphicon glyphicons-share-alt" aria-hidden="true">카카오톡으로공유</span>
+  <button class="btn btn-social btn-kakao img-thumbnail">
+    <img src="/assets/kakaolink_btn_small.png" />공유하기
   </button>
 </a>
 

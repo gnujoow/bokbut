@@ -30,3 +30,13 @@ body {
   padding-top: 70px;
   margin-bottom: 60px;
 }
+
+.btn-kakao {
+  background-color: #FFEB00;
+  color: black;
+}
+
+.btn img {
+  height: 100%;
+  vertical-align: middle;
+}
